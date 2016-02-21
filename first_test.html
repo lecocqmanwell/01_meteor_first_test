@@ -1,10 +1,29 @@
+
+
+
+<!-- first template -->
+
 <head>
   <title>Liste de chose à faire</title>
 </head>
 <body>
+
+<!-- beginning of a very nice form --> 
+
   <div class="container">
+
     <header>
+
       <h1>Liste des "things to do"</h1>
+
+ 
+
+      <form class="new-task">
+
+        <input type="text" name="text" placeholder="Rentrez ici la nouvelle tâche à afficher dans la liste." />
+
+      </form>
+
     </header>
     <ul>
       {{#each tasks}}
@@ -12,8 +31,31 @@
       {{/each}}
     </ul>
   </div>
+
+
 </body>
+
+ 
+
 <template name="task">
-  <li>{{text}}</li>
+
+  <li class="{{#if checked}}checked{{/if}}">
+
+    <button class="delete">&times;</button>
+
+ 
+
+    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+
+ 
+
+    <span class="text">{{text}}</span>
+
+  </li>
+
 </template>
+
+
+
+
 

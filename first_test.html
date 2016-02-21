@@ -26,6 +26,12 @@
 
       </label>
 
+<!-- login button -->
+
+       {{> loginButtons}}
+
+       {{#if currentUser}}
+
 <!-- field to complete -->
 
       <form class="new-task">
@@ -33,7 +39,7 @@
         <input type="text" name="text" placeholder="Rentrez ici la nouvelle tâche à afficher dans la liste." />
 
       </form>
-
+  {{/if}}
     </header>
     <ul>
       {{#each tasks}}
@@ -59,7 +65,7 @@
 
  
 
-    <span class="text">{{text}}</span>
+    <span class="text"><strong>{{username}}</strong> - {{text}}</span>
 
   </li>
 
